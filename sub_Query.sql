@@ -1,0 +1,10 @@
+SELECT
+  MAX(sum_price) AS max_price
+FROM
+  (SELECT
+    user_id,
+    SUM(price) AS sum_price
+  FROM
+    `sql-project-503912.section6.orders`
+  GROUP BY
+    user_id)
